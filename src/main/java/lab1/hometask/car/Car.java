@@ -1,7 +1,10 @@
 package lab1.hometask.car;
 
-public class Car {
+import lab1.hometask.state.state.CarReadyState;
+import lab1.hometask.state.state.CarState;
 
+public class Car {
+    private CarState carState;
     private int wheels;
     private String color;
     private int doors;
@@ -10,11 +13,21 @@ public class Car {
         this.wheels = wheels;
     }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
-
     public void setDoors(int doors) {
         this.doors = doors;
     }
+
+    public CarState getCarState() {
+        return carState;
+    }
+
+    public void setCarState(CarState carState) {
+        this.carState = carState;
+    }
+
+    public Car(){
+        this.carState = new CarReadyState();
+    }
+
+
 }

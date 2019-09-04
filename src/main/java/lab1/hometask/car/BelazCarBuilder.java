@@ -9,8 +9,4 @@ public class BelazCarBuilder extends CarBuilder {
     public void buildDoors() {
         car.setDoors(2);
     }
-
-    public void buildColor() {
-        car.setColor("yellow");
-    }
 }

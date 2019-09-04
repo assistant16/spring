@@ -9,5 +9,4 @@ abstract class CarBuilder {
 
     public abstract void buildWheels();
     public abstract void buildDoors();
-    public abstract void buildColor();
 }
