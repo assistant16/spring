@@ -28,5 +28,8 @@ public class App {
         picoContainer.addComponent(Logger.class);
         picoContainer.getComponent(Logger.class).printPicoContainer();  //don't work Inject
 
+        //Add Test for container
+        //Add archUnit
+
     }
 }
