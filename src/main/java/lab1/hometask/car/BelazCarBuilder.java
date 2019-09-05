@@ -8,6 +8,8 @@ import java.util.ArrayList;
 
 public class BelazCarBuilder extends CarBuilder implements IPublisherObserver {
 
+    static int RANDOM_EDGE = 123412;
+
     private ArrayList<ActionEventObserver> listeners = new ArrayList<ActionEventObserver>();
 
     public void buildWheels() {
@@ -24,6 +26,7 @@ public class BelazCarBuilder extends CarBuilder implements IPublisherObserver {
         System.out.println("set 2 wheels");
         car.setDoors(4);
         System.out.println("set 4 doors");
+        car.setId((int) (Math.random() * RANDOM_EDGE));
         car.setCarState(new CarReadyState(car));
     }
 
