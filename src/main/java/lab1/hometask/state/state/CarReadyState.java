@@ -7,8 +7,8 @@ public class CarReadyState extends CarState{
 
      public  CarReadyState(Car car){
         super(car);
-
     }
+
     @Override
     public void checkReady() {
         System.out.println("ready state");

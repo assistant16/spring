@@ -1,13 +1,20 @@
 package lab1.hometask.car;
 
+import lab1.hometask.state.state.CarNotReadyState;
 import lab1.hometask.state.state.CarReadyState;
 import lab1.hometask.state.state.CarState;
 
-public class Car {
+import java.util.Objects;
+
+public class Car{
     private CarState carState;
     private int wheels;
     private String color;
     private int doors;
+
+    public Car(){
+        this.carState = new CarNotReadyState(this);
+    }
 
     public void setWheels(int wheels) {
         this.wheels = wheels;
@@ -24,10 +31,4 @@ public class Car {
     public void setCarState(CarState carState) {
         this.carState = carState;
     }
-
-    public Car(){
-        this.carState = new CarReadyState();
-    }
-
-
 }
