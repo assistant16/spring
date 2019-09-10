@@ -6,4 +6,6 @@ import java.rmi.RemoteException;
 public interface RmiInterface extends Remote {
 
     public String helloTo(String name) throws RemoteException;
+
+    int sum (int a, int b);
 }
