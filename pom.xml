@@ -6,7 +6,12 @@
 
     <groupId>spring</groupId>
     <artifactId>study</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>lab3</module>
+        <module>labs</module>
+    </modules>
 
     <dependencies>
 
@@ -30,6 +35,7 @@
     </dependency>
 
     <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
 
 
     </dependencies>
