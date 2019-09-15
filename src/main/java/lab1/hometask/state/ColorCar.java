@@ -15,7 +15,7 @@ public class ColorCar {
 
     public ColorCar colorCar(){
         if (colorCar==null){
-            System.out.println("object not ready(color)");
+            System.out.println("springAop.logger.object not ready(color)");
             ColorCar colorCar = new ColorCar();
         }
         return colorCar;

@@ -6,5 +6,5 @@
 
         <import resource="t1000_context.xml" />
 
-<!--        <bean class="java1.ru.javabegin.training.spring.main.MyBeanPostProcessor"/>-->
+<!--        <bean class="java1.ru.javabegin.training.spring.springAop.logger.main.MyBeanPostProcessor"/>-->
 </beans>

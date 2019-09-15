@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <context:component-scan base-package="springAop.*"/>
+
+    <aop:aspectj-autoproxy/>
+
+<!--        <aop:config>-->
+<!--            <aop:aspect id="log" ref="myLogger">-->
+<!--               &lt;!&ndash; For 1 lab-->
+<!--                <aop:pointcut id="idFunc" expression="execution(* springAop.object.MyService.* (..))"/>-->
+<!--                <aop:before pointcut-ref="idFunc" method="init"/>-->
+<!--                <aop:after pointcut-ref="idFunc" method="close"/> &ndash;&gt;-->
+<!--                &lt;!&ndash; For 2 lab &ndash;&gt;-->
+<!--&lt;!&ndash;                <aop:around pointcut="execution(public * *(..))" method="watchTime"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                <aop:around pointcut="execution(* springAop.object.*.* (..))" method="watchTime"/>&ndash;&gt;-->
+<!--                &lt;!&ndash; For 3 lab &ndash;&gt;-->
+<!--&lt;!&ndash;                <aop:pointcut id="allMethods" expression="execution(* springAop.object.*.* (..))"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <aop:around pointcut-ref="allMethods" method="watchTime"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <aop:after-returning pointcut-ref="allMethods" returning="obj" method="print"/>&ndash;&gt;-->
+<!--            </aop:aspect>-->
+<!--        </aop:config>-->
+
+</beans>
