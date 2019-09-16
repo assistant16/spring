@@ -16,8 +16,8 @@ import java.util.Set;
 public class MyLogger {
 
 //    @Pointcut("execution(* *(..)) && within(springAop.object.*))")
-    @Pointcut("execution(* springAop.object.*.* (..))")
-//    @Pointcut("execution(* *(..))")
+//    @Pointcut("execution(* springAop.object.*.* (..))")
+    @Pointcut("execution(* *(..))")
     void allMethods(){}
 
     void printMessage(){
@@ -25,11 +25,15 @@ public class MyLogger {
     }
 
 //    @Around("allMethods() & @annotation(springAop.annotations.ShowTime)")
-    @Around("@annotation(springAop.annotations.ShowTime)")
+    @Around("allMethods() && @annotation(springAop.annotations.ShowTime)")
     public Object watchTime(ProceedingJoinPoint joinpoint) {
         long start = System.currentTimeMillis();
         System.out.println("method begin: " + joinpoint.getSignature().toShortString());
         Object output = null;
+
+        for (Object object : joinpoint.getArgs()) {
+            System.out.println("Param : " + object);
+        }
         try {
             output = joinpoint.proceed();
         } catch (Throwable e) {
@@ -42,10 +46,13 @@ public class MyLogger {
         return output;
     }
 
-    @AfterReturning(pointcut = "allMethods()", returning = "obj")
+    @AfterReturning(pointcut = "allMethods() && @annotation(springAop.annotations.ShowResult)", returning = "obj")
     public void print(Object obj) {
 
         System.out.println("Print info begin >>");
+
+        System.out.println("Print object");
+        System.out.println();
 
         if (obj instanceof Set) {
             Set set = (Set) obj;
@@ -60,7 +67,7 @@ public class MyLogger {
 //            }
         }
 
-        System.out.println("Print info end <<");
+//        System.out.println("Print info end <<");
         System.out.println();
 
     }
